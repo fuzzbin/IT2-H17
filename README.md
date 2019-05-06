@@ -7,5 +7,5 @@
 [Oppgave 3](https://fuzzbin.github.io/IT2-H17/oppgave3.html/)<br>
 
 ## Kommentarer til oppgaven
-...
+Førsteutkast... Ikke helt ferdig
 

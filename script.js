@@ -8,10 +8,12 @@ let kjører = false; // Kjører bildekarusellen? (Flagg)
 
 // Hent elemeneter
 const mdgElement = document.querySelector('.MDG');
+const spElement = document.querySelector('.SP')
 const appElement = document.querySelector('#appBoks');
 
 // Lyttere
 mdgElement.addEventListener('click', mdgslide);
+spElement.addEventListener('click', spFilm);
 
 // Funksjoner
 // Bildekarusellen for MDG
@@ -35,4 +37,14 @@ function mdgslide(){
             }
         }, 2000);
     }
+}
+
+function spFilm(){
+    let filmElement = `
+    <video width="320" height="240" controls autoplay>
+        <source src="./film/senterpartiet.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+    </video>
+    `;
+    appElement.innerHTML = filmElement;
 }

@@ -5,6 +5,7 @@
 const bilder = ['Lan.jpg', 'Rasmus.jpg', 'Une.jpg'];
 const mdglyd = new Audio('lyd/Night-owl.mp3');
 let kjører = false; // Kjører bildekarusellen? (Flagg)
+let karusell;
 
 // Hent elemeneter
 const mdgElement = document.querySelector('.MDG');
@@ -27,7 +28,7 @@ function mdgslide(){
 
     if (!kjører) {
         kjører = true;
-        setInterval(function (){
+        karusell = setInterval(function (){
             appElement.innerHTML = `<img src="bilder/mdg-slides/${bilder[bildeNr]}">`;
             if (bildeNr == bilder.length - 1){
                 bildeNr = 0;
@@ -37,9 +38,18 @@ function mdgslide(){
             }
         }, 2000);
     }
+    else {
+        mdglyd.pause();
+        kjører = false;
+        clearInterval(karusell); // Stopper bildcekarusellen
+    }
 }
 
 function spFilm(){
+    mdglyd.pause();
+    kjører = false;
+    clearInterval(karusell); // Stopper bildcekarusellen
+
     let filmElement = `
     <video width="320" height="240" controls autoplay>
         <source src="./film/senterpartiet.mp4" type="video/mp4">

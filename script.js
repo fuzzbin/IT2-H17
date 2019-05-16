@@ -39,16 +39,18 @@ function mdgslide(){
         }, 2000);
     }
     else {
+        // Stopper bildcekarusellen
         mdglyd.pause();
         kjører = false;
-        clearInterval(karusell); // Stopper bildcekarusellen
+        clearInterval(karusell);
     }
 }
 
 function spFilm(){
+    // Stopper mdg-bildcekarusellen
     mdglyd.pause();
     kjører = false;
-    clearInterval(karusell); // Stopper bildcekarusellen
+    clearInterval(karusell);
 
     let filmElement = `
     <video width="320" height="240" controls autoplay>
